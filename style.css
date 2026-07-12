@@ -1,0 +1,677 @@
+/* ==========================
+   RESET
+========================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Segoe UI',sans-serif;
+
+  background:
+  radial-gradient(circle at top left,#2b0054 0%,#000000 40%),
+  radial-gradient(circle at bottom right,#00334e 0%,#000000 40%);
+
+  color:white;
+  overflow-x:hidden;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(12px);
+
+  padding:20px 0;
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  width:90%;
+  margin:auto;
+}
+
+nav h1{
+  font-size:2rem;
+  font-weight:bold;
+
+  background:linear-gradient(
+  90deg,
+  #ff00cc,
+  #00f2fe
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:25px;
+}
+
+nav ul li a{
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+}
+
+nav ul li a:hover{
+  color:#00f2fe;
+}
+
+/* ==========================
+   HERO SECTION
+========================== */
+
+.hero{
+  min-height:100vh;
+
+  background:
+  linear-gradient(
+  rgba(0,0,0,0.65),
+  rgba(0,0,0,0.65)
+  ),
+  url("./images/background.jpg");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+  position:relative;
+}
+
+.hero::before{
+  content:"PORTFOLIO";
+
+  position:absolute;
+
+  font-size:10rem;
+  font-weight:900;
+
+  color:rgba(255,255,255,0.05);
+
+  letter-spacing:12px;
+
+  z-index:1;
+}
+
+/* ==========================
+   PREMIUM PROFILE IMAGE
+========================== */
+
+.choice{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.choice::before{
+  content:'';
+  position:absolute;
+
+  width:320px;
+  height:320px;
+
+  background:linear-gradient(
+    135deg,
+    #00f2fe,
+    #8a2be2,
+    #ff00cc
+  );
+
+  border-radius:50%;
+
+  filter:blur(40px);
+  opacity:.7;
+
+  animation:rotateGlow 8s linear infinite;
+}
+
+.profile-img{
+  position:relative;
+  z-index:2;
+
+  width:260px;
+  height:260px;
+
+  object-fit:cover;
+  border-radius:50%;
+
+  border:5px solid rgba(255,255,255,.25);
+
+  background:linear-gradient(
+    135deg,
+    rgba(0,242,254,.2),
+    rgba(138,43,226,.2),
+    rgba(255,0,204,.2)
+  );
+
+  box-shadow:
+    0 0 30px rgba(0,242,254,.7),
+    0 0 60px rgba(138,43,226,.5),
+    0 0 90px rgba(255,0,204,.3);
+
+  transition:.5s;
+}
+
+.profile-img:hover{
+  transform:scale(1.08);
+  box-shadow:
+    0 0 40px #00f2fe,
+    0 0 80px #8a2be2,
+    0 0 120px #ff00cc;
+}
+
+@keyframes rotateGlow{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+/* ==========================
+   HERO TEXT
+========================== */
+
+.hero h2{
+  font-size:3rem;
+  margin-bottom:15px;
+}
+
+.hero h2 span{
+  color:#00f2fe;
+}
+
+.hero p{
+  font-size:1.2rem;
+  margin-bottom:20px;
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.resume-btn{
+  display:inline-block;
+
+  padding:12px 25px;
+
+  border:2px solid #00f2fe;
+
+  color:#00f2fe;
+
+  text-decoration:none;
+
+  border-radius:30px;
+
+  transition:0.3s;
+}
+
+.resume-btn:hover{
+  background:#00f2fe;
+  color:black;
+
+  box-shadow:
+  0 0 15px #00f2fe;
+}
+
+/* ==========================
+   SECTION STYLE
+========================== */
+
+section{
+  width:90%;
+  max-width:1000px;
+
+  margin:50px auto;
+
+  padding:40px;
+
+  background:rgba(255,255,255,0.05);
+
+  backdrop-filter:blur(12px);
+
+  border-radius:20px;
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+section h2{
+  color:#ff00cc;
+  margin-bottom:20px;
+
+  border-left:5px solid #ff00cc;
+  padding-left:15px;
+}
+
+/* ==========================
+   SKILLS
+========================== */
+
+.skills-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.skills-list span{
+  background:rgba(0,242,254,0.1);
+
+  border:1px solid rgba(0,242,254,0.4);
+
+  padding:10px 18px;
+
+  border-radius:25px;
+
+  color:#00f2fe;
+}
+
+.skills-list span:hover{
+  background:#00f2fe;
+  color:black;
+}
+
+/* ==========================
+   PROJECTS
+========================== */
+
+.projects-grid{
+  display:grid;
+  gap:20px;
+}
+
+.project-card{
+  background:rgba(255,255,255,0.03);
+
+  padding:25px;
+
+  border-radius:15px;
+
+  transition:0.4s;
+}
+
+.project-card:hover{
+  transform:translateY(-10px);
+
+  box-shadow:
+  0 0 20px rgba(0,242,254,0.3);
+}
+
+.project-card h3{
+  color:#f1c40f;
+}
+
+.tech{
+  color:#00f2fe;
+  margin:10px 0;
+}
+
+.view-btn{
+  display:inline-block;
+
+  margin-top:10px;
+
+  text-decoration:none;
+
+  color:white;
+
+  background:#00f2fe;
+
+  color:black;
+
+  padding:10px 20px;
+
+  border-radius:20px;
+}
+
+/* ==========================
+   CONTACT
+========================== */
+
+#contact{
+  text-align:center;
+}
+
+#contact p{
+  margin:12px 0;
+}
+
+.linkedin-logo{
+  width:50px;
+  margin-top:15px;
+
+  transition:0.4s;
+}
+
+.linkedin-logo:hover{
+  transform:scale(1.2);
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+  text-align:center;
+  padding:25px;
+
+  color:#999;
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+  nav{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .hero::before{
+    font-size:4rem;
+  }
+
+  .hero h2{
+    font-size:2rem;
+  }
+
+  .profile-img{
+    width:180px;
+    height:180px;
+  }
+}
+
+/* ==========================
+   ANIMATIONS
+========================== */
+
+/* Hero Fade In */
+.hero{
+  animation:heroFade 1.5s ease;
+}
+
+@keyframes heroFade{
+  from{
+    opacity:0;
+    transform:translateY(50px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* Floating Profile Image */
+.profile-img{
+  animation:floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage{
+  0%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-15px);
+  }
+  100%{
+    transform:translateY(0);
+  }
+}
+
+/* Portfolio Text Glow */
+.hero::before{
+  animation:glowText 4s infinite alternate;
+}
+
+@keyframes glowText{
+  from{
+    opacity:0.05;
+  }
+  to{
+    opacity:0.12;
+  }
+}
+
+/* Navigation Underline Animation */
+nav ul li a{
+  position:relative;
+}
+
+nav ul li a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0;
+  height:2px;
+  background:#00f2fe;
+  transition:0.4s;
+}
+
+nav ul li a:hover::after{
+  width:100%;
+}
+
+/* Skills Hover Glow */
+.skills-list span{
+  transition:0.4s;
+}
+
+.skills-list span:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 20px #00f2fe;
+}
+
+/* Resume Button Pulse */
+.resume-btn{
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%{
+    box-shadow:0 0 0 rgba(0,242,254,0.7);
+  }
+  50%{
+    box-shadow:0 0 25px rgba(0,242,254,1);
+  }
+  100%{
+    box-shadow:0 0 0 rgba(0,242,254,0.7);
+  }
+}
+
+/* Project Card Glow */
+.project-card:hover{
+  transform:translateY(-12px) scale(1.02);
+
+  box-shadow:
+  0 0 20px rgba(0,242,254,0.5),
+  0 0 40px rgba(0,242,254,0.2);
+}
+
+/* Scroll Animation */
+section{
+  opacity:0;
+  transform:translateY(60px);
+  transition:all 1s ease;
+}
+
+section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ==========================
+   PREMIUM COLORFUL BUBBLES
+========================== */
+
+.bubbles{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:0;
+}
+
+header,
+.hero,
+section,
+footer{
+  position:relative;
+  z-index:1;
+}
+
+.bubbles span{
+  position:absolute;
+  bottom:-150px;
+  border-radius:50%;
+
+  backdrop-filter:blur(4px);
+
+  animation:bubbleMove linear infinite;
+}
+
+/* Individual Bubbles */
+
+.bubbles span:nth-child(1){
+  left:5%;
+  width:80px;
+  height:80px;
+  background:rgba(0,242,254,.25);
+  box-shadow:0 0 30px #00f2fe;
+  animation-duration:16s;
+}
+
+.bubbles span:nth-child(2){
+  left:15%;
+  width:40px;
+  height:40px;
+  background:rgba(255,0,204,.25);
+  box-shadow:0 0 25px #ff00cc;
+  animation-duration:12s;
+}
+
+.bubbles span:nth-child(3){
+  left:25%;
+  width:65px;
+  height:65px;
+  background:rgba(138,43,226,.25);
+  box-shadow:0 0 30px #8a2be2;
+  animation-duration:18s;
+}
+
+.bubbles span:nth-child(4){
+  left:38%;
+  width:110px;
+  height:110px;
+  background:rgba(0,255,170,.20);
+  box-shadow:0 0 35px #00ffaa;
+  animation-duration:20s;
+}
+
+.bubbles span:nth-child(5){
+  left:50%;
+  width:55px;
+  height:55px;
+  background:rgba(255,215,0,.25);
+  box-shadow:0 0 30px gold;
+  animation-duration:15s;
+}
+
+.bubbles span:nth-child(6){
+  left:60%;
+  width:90px;
+  height:90px;
+  background:rgba(0,242,254,.20);
+  box-shadow:0 0 35px #00f2fe;
+  animation-duration:22s;
+}
+
+.bubbles span:nth-child(7){
+  left:72%;
+  width:45px;
+  height:45px;
+  background:rgba(255,0,128,.25);
+  box-shadow:0 0 25px #ff0080;
+  animation-duration:14s;
+}
+
+.bubbles span:nth-child(8){
+  left:82%;
+  width:120px;
+  height:120px;
+  background:rgba(123,104,238,.18);
+  box-shadow:0 0 40px #7b68ee;
+  animation-duration:24s;
+}
+
+.bubbles span:nth-child(9){
+  left:90%;
+  width:60px;
+  height:60px;
+  background:rgba(0,255,255,.25);
+  box-shadow:0 0 30px cyan;
+  animation-duration:17s;
+}
+
+.bubbles span:nth-child(10){
+  left:96%;
+  width:35px;
+  height:35px;
+  background:rgba(255,105,180,.25);
+  box-shadow:0 0 25px hotpink;
+  animation-duration:13s;
+}
+
+@keyframes bubbleMove{
+  0%{
+    transform:translateY(0) rotate(0deg);
+    opacity:0;
+  }
+
+  10%{
+    opacity:1;
+  }
+
+  100%{
+    transform:translateY(-130vh) rotate(360deg);
+    opacity:0;
+  }
+}
